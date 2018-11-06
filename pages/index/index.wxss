@@ -1,0 +1,16 @@
+page{
+  padding-top: 20rpx;
+}
+.topList{
+  width: 90%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  box-shadow: 0 0 6rpx #ccc;
+  margin: 0 auto;
+}
+.cellBox{
+  width: 100%;
+}
+.cell{
+  width: 33.33%;
+}

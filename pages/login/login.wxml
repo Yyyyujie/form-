@@ -1,0 +1,15 @@
+<view class="formBox">
+    <view class='logo'></view>
+    <view>名字</view>
+    <view class='inputBox'>
+        <view class='userBox'>
+          <view class='iconfont icon-yonghuming'></view>
+          <input placeholder='请输入用户名' data-type="userName" maxlength='12' bindinput='getMsg'></input>
+        </view>
+        <view class='userBox'>
+          <view class='iconfont icon-mima'></view>
+          <input placeholder='请输入密码' type='password' maxlength='10' data-type="password" bindinput='getMsg'></input>
+        </view>
+        <button class='login' disabled='{{!loginStatus}}' style="background:{{loginStatus?'pink':'#ccc'}};color:#fff">登录</button>
+    </view>
+</view>

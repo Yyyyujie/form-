@@ -1,0 +1,42 @@
+page{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 180rpx;
+  /* justify-content: center; */
+}
+.formBox{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  font-size: 30rpx;
+}
+.logo{
+  width: 140rpx;
+  height: 140rpx;
+  background: pink;
+  margin-bottom: 30rpx;
+}
+.userBox{
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+}
+.userBox input{
+  padding-left: 20rpx;
+}
+.inputBox{
+  margin-top: 140rpx;
+  width: 100%;
+}
+.login{
+  height: 80rpx;
+  font-size: 30rpx;
+  margin-top: 100rpx;
+  background: pink;
+  color: #fff;
+}
