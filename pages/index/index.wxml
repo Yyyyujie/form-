@@ -1,8 +1,32 @@
 <view class="topList">
+    <view>统计个人业绩</view>
+    <view class='topCell'>
+      <view class='topLi'>
+          <view>今日收入</view>
+          <view>10</view>
+      </view>
+      <view class='topLi'>
+          <view>今日收入</view>
+          <view>10</view>
+      </view>
+      <view class='topLi'>
+          <view>今日收入</view>
+          <view>10</view>
+      </view>
+      <view class='topLi'>
+          <view>今日收入</view>
+          <view>10</view>
+      </view>
+      <view class='topLi'>
+          <view>今日收入</view>
+          <view>10</view>
+      </view>
 
+    </view>
 </view>
 <view class='cellBox'>
-  <view class='cell'>
-      注册
-  </view>
+  <view class='cell' wx:for="{{cellList}}" data-path="{{item.path}}" bindtap='jump'>
+      <view class='iconfont {{item.icon}}'></view>
+      <view class='cellTitle'>{{item.name}}</view>
+  </view> 
 </view>
