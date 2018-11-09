@@ -1,0 +1,26 @@
+<view class="cellBox">
+    <view class='cell'>
+        <view>类型</view>
+        <view class='pickBox'>
+         <view>{{array[index]}}</view>
+          <picker bindchange="bindPickerChange" class='picker' value="{{index}}" range="{{array}}">
+            <view class='iconfont icon-zhankaijiantou'></view>
+          </picker>
+        </view>
+    </view>
+    <view class='cell'>
+      <!-- 数量 -->
+      <view>类型</view>
+      <view class='pickBox'>
+          <view class='iconfont icon-jianqu_fill add' data-type="jian" bindtap='changeNumber'></view>
+          <input value='{{number}}' class='number' bindinput='number'></input>
+          <view class='iconfont icon-jiahao add' data-type="add" bindtap='changeNumber'></view>
+      </view>
+    </view>
+    <view class='cell'>
+    <view>备注</view>
+     <input bindinput='remarks'></input>
+    </view>
+    
+</view>
+<button class=''>激活</button> 

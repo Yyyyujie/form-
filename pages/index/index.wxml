@@ -1,5 +1,5 @@
 <view class="topList">
-    <view>统计个人业绩</view>
+    <view class='topTitle'>统计个人业绩</view>
     <view class='topCell'>
       <view class='topLi'>
           <view>今日收入</view>
