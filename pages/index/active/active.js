@@ -8,7 +8,9 @@ Page({
   data: {
     array: ['美国', '中国', '巴西', '日本'],
     index:0,
-    number:1
+    number:1,
+    pickWay:['自提','物流'],
+    pickIndex:0
   },
 
   /**
@@ -88,9 +90,10 @@ Page({
       number: Number(e.detail.value)
     })
   },
-  remarks:function(e){
+  getMsg:function(e){
+    let str=e.currentTarget.dataset.type;
     this.setData({
-      remarks:e.detail.value
+      [str]:e.detail.value
     })
   },
   active:function(){
@@ -99,6 +102,11 @@ Page({
       token: wx.getStorageSync('userMsg').token
     }, (ret) => {
 
+    })
+  },
+  bindPickerChange1:function(e){
+    this.setData({
+      pickIndex: e.detail.value
     })
   }
 })

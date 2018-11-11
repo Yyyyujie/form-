@@ -9,12 +9,16 @@
     "pages/index/again/again",
     "pages/index/transfer/transfer",
     "pages/index/memberList/memberList",
-    "pages/me/order/order"
+    "pages/me/order/order",
+    "pages/index/activeOther/activeOther",
+    "pages/index/againTransfer/againTransfer",
+    "pages/register/register",
+    "pages/forget/forget"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "仁善健康分销系统",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

@@ -1,4 +1,5 @@
 // pages/index/active/active.js
+const app = getApp();
 Page({
 
   /**
@@ -89,9 +90,22 @@ Page({
       number: Number(e.detail.value)
     })
   },
+  nextNumber:function(e){
+    this.setData({
+      nextNumber:e.detail.value
+    })
+  },
   remarks: function (e) {
     this.setData({
       remarks: e.detail.value
+    })
+  },
+  active: function () {
+    app.wxItools.wxItools.request(app.__config.InterfaceUrl.sendCode, 'GET', {
+      phone: that.data.phone,
+      token: wx.getStorageSync('userMsg').token
+    }, (ret) => {
+
     })
   },
   bindPickerChange1: function (e) {

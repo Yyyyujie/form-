@@ -40,3 +40,12 @@ page{
   background: #fed784;
   color: #fff;
 }
+.more{
+  display: flex;
+  justify-content: space-between;
+}
+.gotoReg,.forget{
+  margin-top:30rpx;
+  text-decoration: underline;
+  color:#ccc;
+}

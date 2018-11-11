@@ -11,5 +11,9 @@
           <input placeholder='请输入密码' type='password' maxlength='10' data-type="password" bindinput='getMsg'></input>
         </view>
         <button class='login' disabled='{{!loginStatus}}' style="background:{{loginStatus?'#fed784':'#ccc'}};color:#fff" bindtap='login'>登录</button>
+        <view class='more'>
+          <view class='forget' bindtap='forget'>忘记密码?</view>
+          <view class='gotoReg' bindtap='gotoReg'>没有账号?点击注册</view>
+        </view>
     </view>
 </view>

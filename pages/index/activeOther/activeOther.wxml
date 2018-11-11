@@ -1,5 +1,10 @@
 <view class="cellBox">
   <view class='cell'>
+    <!-- 数量 -->
+    <view>下级会员账号</view>
+    <input class='nextNumber' type='number' placeholder='请输入下级会员账号' bindinput='nextNumber'></input>
+  </view>
+  <view class='cell'>
     <view>产品名称</view>
     <view class='pickBox'>
       <view>{{array[index]}}</view>
@@ -18,7 +23,7 @@
       <view class='number'>1</view>
     </view>
   </view>
-  <view class='cell'>
+ <view class='cell'>
     <view>提货方式</view>
     <view class='pickBox'>
       <view>{{pickWay[pickIndex]}}</view>
@@ -43,7 +48,7 @@
   </view>
   <view class='cell'>
     <view>备注</view>
-    <input class='remarks' data-type="remarks" bindinput='getMsg' placeholder='点击输入备注信息'></input>
+    <input class='remarks' data-type="remarks" bindinput='getMsg'  placeholder='点击输入备注信息'></input>
   </view>
 
 </view>

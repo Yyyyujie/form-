@@ -11,9 +11,14 @@ Page({
         path:'./reg/reg'
       },
       {
-        name: '激活',
+        name: '激活自己',
         icon: 'icon-jihuo',
         path: './active/active'
+      },
+      {
+        name: '激活下级会员',
+        icon: 'icon-jihuo',
+        path: './activeOther/activeOther'
       },
       {
         name: '重消',
@@ -21,9 +26,14 @@ Page({
         path: './again/again'
       },
       {
-        name: '转账',
+        name: '市场积分转账',
         icon: 'icon-zhuanzhang',
         path: './transfer/transfer'
+      },
+      {
+        name: '重消积分转账',
+        icon: 'icon-zhuanzhang',
+        path: './againTransfer/againTransfer'
       },
       {
         name: '人员查看',

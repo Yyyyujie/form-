@@ -1,0 +1,2 @@
+/* pages/index/againTransfer/againTransfer.wxss */
+@import "../transfer/transfer";

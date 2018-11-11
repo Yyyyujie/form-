@@ -1,6 +1,6 @@
 <view class="cellBox">
     <view class='cell'>
-        <view>类型</view>
+        <view>产品名称</view>
         <view class='pickBox'>
          <view>{{array[index]}}</view>
           <picker bindchange="bindPickerChange" class='picker' value="{{index}}" range="{{array}}">
@@ -12,15 +12,39 @@
       <!-- 数量 -->
       <view>类型</view>
       <view class='pickBox'>
-          <view class='iconfont icon-jianqu_fill add' data-type="jian" bindtap='changeNumber'></view>
-          <input value='{{number}}' class='number' bindinput='number'></input>
-          <view class='iconfont icon-jiahao add' data-type="add" bindtap='changeNumber'></view>
+          <!-- <view class='iconfont icon-jianqu_fill add' data-type="jian" bindtap='changeNumber'></view> -->
+          <!-- <input value='{{number}}' class='number' bindinput='number'></input> -->
+          <!-- <view class='iconfont icon-jiahao add' data-type="add" bindtap='changeNumber'></view> -->
+          <view class='number'>1</view>
       </view>
     </view>
-    <view class='cell'>
-    <view>备注</view>
-     <input class='remarks' bindinput='remarks' placeholder='点击输入备注信息'></input>
+ <view class='cell'>
+    <view>提货方式</view>
+    <view class='pickBox'>
+      <view>{{pickWay[pickIndex]}}</view>
+      <picker bindchange="bindPickerChange1" class='picker' value="{{pickIndex}}" range="{{pickWay}}">
+        <view class='iconfont icon-zhankaijiantou'></view>
+      </picker>
     </view>
+  </view>
+  <view wx:if="{{pickIndex==1}}">
+    <view class='cell'>
+      <view>收货人</view>
+      <input class='remarks' data-type='pickname' bindinput='getMsg' placeholder='请输入收货人姓名'></input>
+    </view>
+    <view class='cell'>
+      <view>联系方式</view>
+      <input class='remarks' data-type="pickphone" bindinput='getMsg' placeholder='请输入收货人联系方式'></input>
+    </view>
+    <view class='cell address'>
+      <view>收货地址</view>
+      <textarea data-type="pickaddress" bindinput='getMsg' placeholder='请输入收货地址'></textarea>
+    </view>
+  </view>
+  <view class='cell'>
+    <view>备注</view>
+    <input class='remarks' data-type="remarks" bindinput='getMsg' placeholder='点击输入备注信息'></input>
+  </view>
     
 </view>
-<button class='active' bindtap='active'>激活</button> 
+<button class='active' bindtap='active'>重消</button> 

@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -53,7 +53,13 @@
 				{
 					"id": -1,
 					"name": "激活",
-					"pathName": "pages/index/active/active"
+					"pathName": "pages/index/active/active",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "注册登陆",
+					"pathName": "pages/register/register"
 				}
 			]
 		}

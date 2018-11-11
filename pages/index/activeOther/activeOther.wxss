@@ -1,0 +1,6 @@
+/* pages/index/activeOther/activeOther.wxss */
+@import "../active/active";
+.nextNumber{
+  flex: 1;
+  text-align: right;
+}

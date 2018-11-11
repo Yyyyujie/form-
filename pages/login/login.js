@@ -90,5 +90,17 @@ Page({
     }, (ret) => {
       console.log(ret)
     })
+  },
+  //点击注册
+  gotoReg:function(){
+    wx.reLaunch({
+      url: '../register/register',
+    })
+  },
+  //忘记密码
+  forget:function(){
+    wx.reLaunch({
+      url: '../forget/forget',
+    })
   }
 })
