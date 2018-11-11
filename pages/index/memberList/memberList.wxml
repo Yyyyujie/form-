@@ -1,0 +1,9 @@
+<view class="memberList">
+    <view class='member' wx:for="{{5}}">
+          <view>姓名</view>
+          <view>13888888888</view>
+          <view>性别</view>
+          <view>类型</view>
+    </view>
+
+</view>

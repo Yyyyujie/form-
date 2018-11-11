@@ -18,7 +18,7 @@ page{
 .logo{
   width: 140rpx;
   height: 140rpx;
-  background: pink;
+  background: #fed784;
   margin-bottom: 30rpx;
 }
 .userBox{
@@ -37,6 +37,6 @@ page{
   height: 80rpx;
   font-size: 30rpx;
   margin-top: 100rpx;
-  background: pink;
+  background: #fed784;
   color: #fff;
 }

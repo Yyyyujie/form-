@@ -10,6 +10,6 @@
           <view class='iconfont icon-mima'></view>
           <input placeholder='请输入密码' type='password' maxlength='10' data-type="password" bindinput='getMsg'></input>
         </view>
-        <button class='login' disabled='{{!loginStatus}}' style="background:{{loginStatus?'pink':'#ccc'}};color:#fff">登录</button>
+        <button class='login' disabled='{{!loginStatus}}' style="background:{{loginStatus?'#fed784':'#ccc'}};color:#fff" bindtap='login'>登录</button>
     </view>
 </view>

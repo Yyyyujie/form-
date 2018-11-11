@@ -25,7 +25,7 @@
     </view>
 </view>
 <view class='cellBox'>
-  <view class='cell' wx:for="{{cellList}}" data-path="{{item.path}}" bindtap='jump'>
+  <view class='cell' wx:for="{{cellList}}" wx:key="" data-path="{{item.path}}" bindtap='jump'>
       <view class='iconfont {{item.icon}}'></view>
       <view class='cellTitle'>{{item.name}}</view>
   </view> 

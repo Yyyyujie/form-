@@ -29,3 +29,15 @@
 .pickBox .add{
   padding:0 4rpx;
 }
+.active{
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background: #fed784
+}
+.remarks{
+  flex: 1;
+  text-align: right;
+}

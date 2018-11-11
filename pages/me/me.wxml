@@ -1,20 +1,20 @@
 <view class="headBox">
-    <view class='headImg'>
+    <view class='headImg' bindtap='changeHead'>
       <image src='/assets/image/head.jpg'></image>
     </view>
     <view>名字</view>
 </view>
 <view class='cellBox'>
     <view class='cell'>
-        <view class='cellTitle'><view class='iconfont icon-yonghuming'></view>手机号码</view>
+        <view class='cellTitle'><view class='iconfont icon-shoujihaoma'></view>手机号码</view>
         <view>18333333333</view>
     </view>
     <view class='cell'>
-        <view class='cellTitle'><view class='iconfont icon-yonghuming'></view>性别</view>
+        <view class='cellTitle'><view class='iconfont icon-xingbie'></view>性别</view>
         <view>女</view>
     </view>
-    <view class='cell'>
-        <view class='cellTitle'><view class='iconfont icon-yonghuming'></view>我的订单</view>
+    <view class='cell' bindtap='order'>
+        <view class='cellTitle'><view class='iconfont icon-dingdan'></view>我的订单</view>
         <view class='iconfont icon-zhankaijiantou more'></view>
     </view>
 </view>

@@ -1,0 +1,9 @@
+<view class="memberList">
+    <view class='member'>
+          <view>产品名字</view>
+          <view>产品类型</view>
+          <view>数量</view>
+          <view>时间</view>
+    </view>
+
+</view>

@@ -62,5 +62,21 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  //查看我的订单
+  order:function(){
+    wx.navigateTo({
+      url: './order/order',
+    })
+  },
+  //上传头像
+  changeHead:function(){
+    wx.chooseImage({
+      count:1,
+      sourceType: ['album'],
+      success: function(res) {
+          console.log(res)
+      },
+    })
   }
 })

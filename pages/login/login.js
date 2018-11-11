@@ -1,4 +1,5 @@
 // pages/login/login.js
+const app = getApp();
 Page({
 
   /**
@@ -12,7 +13,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.login({
+      success: function (res) {
+        wx.setStorage({
+          key: 'code',
+          data: res.code,
+        })
+      }
+    })
   },
 
   /**
@@ -68,7 +76,19 @@ Page({
     let str = e.currentTarget.dataset.type;
     this.setData({
       [str]:e.detail.value,
-      loginStatus: str = "password" && (e.detail.value.length >= 6)?true:false
+      loginStatus: (str == "password" && (e.detail.value.length >= 6) && (this.data.userName)) || (str =="userName" && (e.detail.value.length > 0) && (this.data.password))?true:false
     });
+  },
+  //登录
+  login:function(){
+    let that = this;
+    app.wxItools.wxItools.request(app.__config.InterfaceUrl.login, 'POST', {
+      loginName: that.data.userName,
+      password: that.data.password,
+      // code: wx.getStorageSync('code')
+      // token: wx.getStorageSync('userMsg').token
+    }, (ret) => {
+      console.log(ret)
+    })
   }
 })

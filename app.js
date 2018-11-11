@@ -1,12 +1,23 @@
+import WxValidate from './assets/plugins/wx-validate/WxValidate'
+import WxService from './assets/plugins/wx-service/WxService'
+import HttpResource from './helpers/HttpResource'
+import HttpService from './helpers/HttpService'
+import __config from './etc/config'
+import wxItools from './assets/plugins/wx-itools/wx-itools.js'
 //app.js
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+
   },
   globalData: {
     userInfo: null
-  }
+  },
+  WxValidate: (rules, messages) => new WxValidate(rules, messages),
+  HttpResource: (url, paramDefaults, actions, options) => new HttpResource(url, paramDefaults, actions, options).init(),
+  HttpService: new HttpService({
+    baseURL: __config.basePath,
+  }),
+  WxService: new WxService,
+  __config,
+  wxItools,
 })

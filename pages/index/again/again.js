@@ -1,5 +1,4 @@
 // pages/index/active/active.js
-const app = getApp();
 Page({
 
   /**
@@ -7,8 +6,8 @@ Page({
    */
   data: {
     array: ['美国', '中国', '巴西', '日本'],
-    index:0,
-    number:1
+    index: 0,
+    number: 1
   },
 
   /**
@@ -71,34 +70,26 @@ Page({
       index: e.detail.value
     })
   },
-  changeNumber:function(e){
+  changeNumber: function (e) {
     console.log(e);
-    if (e.currentTarget.dataset.type=='add'){
-        this.setData({
-          number: this.data.number+1
-        })
-    } else if (e.currentTarget.dataset.type == 'jian'){
+    if (e.currentTarget.dataset.type == 'add') {
       this.setData({
-        number: this.data.number==1?1:this.data.number - 1
+        number: this.data.number + 1
+      })
+    } else if (e.currentTarget.dataset.type == 'jian') {
+      this.setData({
+        number: this.data.number == 1 ? 1 : this.data.number - 1
       })
     }
   },
-  number:function(e){
+  number: function (e) {
     this.setData({
       number: Number(e.detail.value)
     })
   },
-  remarks:function(e){
+  remarks: function (e) {
     this.setData({
-      remarks:e.detail.value
-    })
-  },
-  active:function(){
-    app.wxItools.wxItools.request(app.__config.InterfaceUrl.sendCode, 'GET', {
-      phone: that.data.phone,
-      token: wx.getStorageSync('userMsg').token
-    }, (ret) => {
-
+      remarks: e.detail.value
     })
   }
 })

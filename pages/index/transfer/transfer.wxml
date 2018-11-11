@@ -1,0 +1,7 @@
+<view class='formBox'>
+    <view class='inputBox'>
+      <view class='iconfont icon-zhuce'></view>
+      <input placeholder='请输入积分'></input>
+    </view>
+    <button class='sub'>提交</button>
+</view>

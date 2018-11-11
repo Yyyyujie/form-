@@ -1,0 +1,24 @@
+/* pages/index/memberList/memberList.wxss */
+.memberList{
+  width: 100%;
+  padding:20rpx;
+  box-sizing: border-box;
+}
+.member{
+  padding: 0 20rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+.member view{
+  width: 25%;
+  text-align: center;
+}
+.member view:first-child{
+  text-align: left
+}
+.member view:last-child{
+  text-align: right
+}
