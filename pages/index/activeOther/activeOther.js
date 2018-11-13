@@ -101,11 +101,27 @@ Page({
     })
   },
   active: function () {
-    app.wxItools.wxItools.request(app.__config.InterfaceUrl.sendCode, 'GET', {
-      phone: that.data.phone,
+    let nextNumber = this.data.nextNumber;
+    let that = this;
+    let str = 'product.id';
+    if (!nextNumber){
+      wx.showToast({
+        title: '请输入下级会员账号',
+        icon: 'none'
+      });
+      return false
+    }
+    app.wxItools.wxItools.request(app.__config.InterfaceUrl.addActivityChild, 'GET', {
+      phone:nextNumber,
+      [str]: that.data.array[that.data.index].id,
+      amount: 1,
+      receiveType: that.data.pickIndex,//自提是0
+      receiveName: that.data.pickname,
+      receivePhone: that.data.pickphone,
+      receiveAddress: that.data.pickaddress,
       token: wx.getStorageSync('userMsg').token
     }, (ret) => {
-
+      console.log(ret);
     })
   },
   bindPickerChange1: function (e) {

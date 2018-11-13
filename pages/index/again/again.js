@@ -1,4 +1,5 @@
 // pages/index/active/active.js
+const app = getApp();
 Page({
 
   /**
@@ -97,6 +98,21 @@ Page({
   bindPickerChange1: function (e) {
     this.setData({
       pickIndex: e.detail.value
+    })
+  },
+  active:function(){
+    let that = this;
+    let str = 'product.id';
+    app.wxItools.wxItools.request(app.__config.InterfaceUrl.addConsume, 'GET', {
+      [str]: that.data.array[that.data.index].id,
+      amount: 1,
+      receiveType: that.data.pickIndex,//自提是0
+      receiveName: that.data.pickname,
+      receivePhone: that.data.pickphone,
+      receiveAddress: that.data.pickaddress,
+      token: wx.getStorageSync('userMsg').token
+    }, (ret) => {
+      console.log(ret);
     })
   }
 })

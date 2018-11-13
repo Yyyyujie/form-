@@ -144,9 +144,12 @@ Page({
     })
   },
   reg:function(){
+    let mobile = /^[1][3,4,5,7,8,9][0-9]{9}$/;
     let phone = this.data.phone;
     let code= this.data.code;
     let name= this.data.name;
+    let password = this.data.password;
+    let that = this;
     if(!phone){
       wx.showToast({
         title: '请输入手机号码',
@@ -154,13 +157,34 @@ Page({
       });
       return false
     };
-    if (!code) {
+    if (!mobile.test(phone)){
       wx.showToast({
-        title: '请输入验证码',
+        title: '手机号码格式有误',
         icon: 'none'
       });
       return false
     };
+    if (!this.data.password) {
+      wx.showToast({
+        title: '请输入密码',
+        icon: 'none'
+      });
+      return false
+    };
+    if (this.data.password.length<6) {
+      wx.showToast({
+        title: '密码长度至少6位',
+        icon: 'none'
+      });
+      return false
+    };
+    // if (!code) {
+    //   wx.showToast({
+    //     title: '请输入验证码',
+    //     icon: 'none'
+    //   });
+    //   return false
+    // };
     if (!name) {
       wx.showToast({
         title: '请输入姓名',
@@ -169,11 +193,12 @@ Page({
       return false
     };
     //注册接口
-    app.wxItools.wxItools.request(app.__config.InterfaceUrl.sendCode, 'GET', {
-      phone: that.data.phone,
-      token: wx.getStorageSync('userMsg').token
+    app.wxItools.wxItools.request(app.__config.InterfaceUrl.registerNext, 'GET', {
+      loginName: that.data.phone,
+      password: that.data.password,
+      name:that.data.name
     }, (ret) => {
-
+      console.log(ret);
     })
   }
 })

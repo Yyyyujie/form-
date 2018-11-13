@@ -1,11 +1,13 @@
 // pages/me/order/order.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    pageNo:1,
+    pageSize:10
   },
 
   /**
@@ -26,7 +28,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.init();
   },
 
   /**
@@ -62,5 +64,16 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  //获取订单列表
+  init:function(){
+    let that = this;
+    app.wxItools.wxItools.request(app.__config.InterfaceUrl.orderList, 'GET', {
+      pageNo: that.data.pageNo,
+      pageSize:that.data.pageSize,
+      token: wx.getStorageSync('userMsg').token
+    }, (ret) => {
+      console.log(ret);
+    })
   }
 })

@@ -1,4 +1,5 @@
 // pages/index/transfer/transfer.js
+const app = getApp();
 Page({
 
   /**
@@ -62,5 +63,46 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  getMsg:function(e){
+    console.log(e);
+    let str = e.currentTarget.dataset.type;
+    this.setData({
+      [str]:e.detail.value
+    });
+  },
+  sub:function(){
+    let that = this;
+    let phone=this.data.phone;
+    let number= this.data.number;
+    let mobile = /^[1][3,4,5,7,8,9][0-9]{9}$/;
+    if(!phone){
+      wx.showToast({
+        title: '请输入下级会员账号',
+        icon: 'none'
+      });
+      return false
+    };
+    if(!mobile.test(phone)){
+      wx.showToast({
+        title: '会员账号格式有误',
+        icon: 'none'
+      });
+      return false
+    };
+    if(!number){
+      wx.showToast({
+        title: '请输入积分',
+        icon: 'none'
+      });
+      return false
+    };
+    app.wxItools.wxItools.request(app.__config.InterfaceUrl.transferMarketScore, 'GET', {
+      phone:that.data.phone,
+      number:that.data.number,
+      token: wx.getStorageSync('userMsg').token
+    }, (ret) => {
+      console.log(ret);
+    })
   }
 })

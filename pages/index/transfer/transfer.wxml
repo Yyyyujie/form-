@@ -1,11 +1,11 @@
 <view class='formBox'>
     <view class='inputBox'>
       <view class='iconfont icon-zhuce'></view>
-      <input placeholder='请输入下级会员账号' type='number'></input>
+      <input placeholder='请输入下级会员账号' type='number' maxlength='11' data-type="phone" bindinput='getMsg'></input>
     </view>
     <view class='inputBox'>
       <view class='iconfont icon-zhuce'></view>
-      <input placeholder='请输入积分' type="number"></input>
+      <input placeholder='请输入积分' type="number" data-type="number" bindinput='getMsg'></input>
     </view>
-    <button class='sub'>提交</button>
+    <button class='sub' bindtap='sub'>提交</button>
 </view>

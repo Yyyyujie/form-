@@ -97,16 +97,31 @@ Page({
     })
   },
   active:function(){
-    app.wxItools.wxItools.request(app.__config.InterfaceUrl.sendCode, 'GET', {
-      phone: that.data.phone,
+    let that = this;
+    let str ='product.id';
+    app.wxItools.wxItools.request(app.__config.InterfaceUrl.addActivitySelf, 'GET', {
+      [str]: that.data.array[that.data.index].id,
+      amount:1,
+      receiveType: that.data.pickIndex,//自提是0
+      receiveName: that.data.pickname,
+      receivePhone: that.data.pickphone,
+      receiveAddress: that.data.pickaddress,
       token: wx.getStorageSync('userMsg').token
     }, (ret) => {
-
+      console.log(ret);
     })
   },
   bindPickerChange1:function(e){
     this.setData({
       pickIndex: e.detail.value
+    })
+  },
+  //产品名称下拉框
+  produce:function(){
+    app.wxItools.wxItools.request(app.__config.InterfaceUrl.productList, 'GET', {
+      token: wx.getStorageSync('userMsg').token
+    }, (ret) => {
+      console.log(ret);
     })
   }
 })

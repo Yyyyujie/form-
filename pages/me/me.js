@@ -1,11 +1,13 @@
 // pages/me/me.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    array:['女','男'],
+    index:0
   },
 
   /**
@@ -75,8 +77,43 @@ Page({
       count:1,
       sourceType: ['album'],
       success: function(res) {
-          console.log(res)
+          console.log(res);
+        const tempFilePaths = res.tempFilePaths;
+        wx.showLoading({
+          title: '上传头像中',
+        })
+          wx.uploadFile({
+            url: app.__config.basePath + app.__config.InterfaceUrl.imageUpload ,
+            filePath: tempFilePaths[0],
+            name: 'file',
+            header: {
+              'content-type': 'multipart/form-data'
+            },
+            formData: {
+              'token': wx.getStorageSync('userMsg').token
+            },
+            success:function(ret){
+              wx.hideLoading();
+              console.log(ret)
+            }
+          })
       },
     })
-  }
+  },
+  //修改性别
+  changeSex:function(){
+    app.wxItools.wxItools.request(app.__config.InterfaceUrl.updateSex, 'POST', {
+      sex: Number(this.data.index)+1,
+      token: wx.getStorageSync('userMsg').token
+    }, (ret) => {
+      console.log(ret);
+      
+    })
+  },
+  bindPickerChange: function (e) {
+    this.setData({
+      index: e.detail.value
+    });
+    this.changeSex();
+  },
 })

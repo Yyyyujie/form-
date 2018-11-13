@@ -1,6 +1,6 @@
 <view class="formBox">
     <view class='logo'></view>
-    <view>名字</view>
+    <view>仁善健康分销系统</view>
     <view class='inputBox'>
         <view class='userBox'>
           <view class='iconfont icon-yonghuming'></view>

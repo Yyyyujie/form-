@@ -11,7 +11,10 @@
     </view>
     <view class='cell'>
         <view class='cellTitle'><view class='iconfont icon-xingbie'></view>性别</view>
-        <view>女</view>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">{{array[index]}}
+    </view>
+  </picker>
     </view>
     <view class='cell' bindtap='order'>
         <view class='cellTitle'><view class='iconfont icon-dingdan'></view>我的订单</view>

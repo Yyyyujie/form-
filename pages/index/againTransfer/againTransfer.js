@@ -1,4 +1,5 @@
 // pages/index/againTransfer/againTransfer.js
+const app = getApp();
 Page({
 
   /**
@@ -62,5 +63,29 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  getMsg:function(e){
+    let str = e.currentTarget.dataset.type;
+    this.setData({
+      [str]: e.detail.value
+    });
+  },
+  //提交
+  active:function(){
+    let number= this.data.number;
+    let that= this;
+    if(!number){
+      wx.showToast({
+        title: '请输入市场积分',
+        icon:'none'
+      });
+      return false
+    };
+    app.wxItools.wxItools.request(app.__config.InterfaceUrl.transferConsumeScore, 'GET', {
+      number: that.data.number,
+      token: wx.getStorageSync('userMsg').token
+    }, (ret) => {
+      console.log(ret);
+    })
   }
 })

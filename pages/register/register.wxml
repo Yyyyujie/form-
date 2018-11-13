@@ -1,39 +1,39 @@
 <view class="regBox">
-    <view class='logoBox'>
-        <image src='/assets/image/head.jpg'></image>
-    </view>
-    <view>我的logo</view>
+  <view class='logoBox'>
+    <image src='/assets/image/head.jpg'></image>
+  </view>
+  <view>我的logo</view>
 </view>
 <view class='formBox'>
-    <view class="inputBox">
-      <view class="iconfont icon-shoujihaoma"></view>
-      <input placeholder='请输入手机号码' maxlength='11' data-type="phone" bindinput='getMsg'></input>
-    </view>
-    <view class="inputBox">
-      <view class="iconfont icon-yanzhengma"></view>
-      <input placeholder='请输入验证码' maxlength='4' data-type="code" bindinput='getMsg'></input>
-      <view class="sendCode" disabled='{{!sendStatus}}' style="background:{{sendStatus?'#fed784':'#ccc'}};color:#fff" bindtap='sendCode'>{{send}}</view>
-    </view>
-    <view class="inputBox">
-      <view class="iconfont icon-zhcc_yonghuming"></view>
-      <input placeholder='请输入姓名' maxlength='11' data-type="name" bindinput='getMsg'></input>
-    </view> 
-    <view class="inputBox">
-      <view class="iconfont icon-xingbie"></view>
-      <view class='radioBox'>
-         <view wx:for="{{sex}}" wx:key="sex" class='sex' data-index="{{index}}" bindtap='radioChange'>
-              <view class="iconfont {{index==sexValue?'icon-xuanzhong':'icon-weixuanzhong'}}"></view>
-              {{item.name}}
-         </view>
+  <view class="inputBox">
+    <view class="iconfont icon-shoujihaoma"></view>
+    <input placeholder='请输入手机号码' maxlength='11' data-type="phone" bindinput='getMsg'></input>
+  </view>
+  <view class="inputBox">
+    <view class="iconfont icon-yanzhengma"></view>
+    <input placeholder='请输入验证码' maxlength='4' data-type="code" bindinput='getMsg'></input>
+    <view class="sendCode" disabled='{{!sendStatus}}' style="background:{{sendStatus?'#fed784':'#ccc'}};color:#fff" bindtap='sendCode'>{{send}}</view>
+  </view>
+  <view class="inputBox">
+    <view class="iconfont icon-zhcc_yonghuming"></view>
+    <input placeholder='请输入姓名' maxlength='11' data-type="name" bindinput='getMsg'></input>
+  </view>
+  <view class="inputBox">
+    <view class="iconfont icon-xingbie"></view>
+    <view class='radioBox'>
+      <view wx:for="{{sex}}" wx:key="sex" class='sex' data-index="{{index}}" bindtap='radioChange'>
+        <view class="iconfont {{index==sexValue?'icon-xuanzhong':'icon-weixuanzhong'}}"></view>
+        {{item.name}}
       </view>
-    </view> 
-    <view class="inputBox">
-      <view class="iconfont icon-zhcc_yonghuming"></view>
-      <input placeholder='请输入推荐人账号' maxlength='11' data-type="referee" bindinput='getMsg'></input>
-    </view> 
-    <button class="sub"  bindtap='reg'>提交</button>
-    <view class='more'>
-          <view class='forget' bindtap='forget'>已有账号?忘记密码</view>
-          <view class='gotoReg' bindtap='gotoReg'>已有账号?点击登陆</view>
-        </view>
+    </view>
+  </view>
+  <view class="inputBox">
+    <view class="iconfont icon-zhcc_yonghuming"></view>
+    <input placeholder='请输入推荐人账号' maxlength='11' data-type="referee" bindinput='getMsg'></input>
+  </view>
+  <button class="sub" bindtap='reg'>提交</button>
+  <view class='more'>
+    <view class='forget' bindtap='forget'>已有账号?忘记密码</view>
+    <view class='gotoReg' bindtap='gotoReg'>已有账号?点击登陆</view>
+  </view>
 </view>

@@ -11,6 +11,26 @@ export default {
     //发送验证码
     sendCode:'/api/code',
     //忘记密码
-    forgetPwd:'/api/forgetPwd'
+    forgetPwd:'/api/forgetPwd',
+    //注册下级会员
+    registerNext:'/api/user/register',
+    //激活自己
+    addActivitySelf:'/api/order/addActivitySelf',
+    //产品名称下拉框
+    productList:'/api/product/list',
+    //激活下级会员
+    addActivityChild:'/api/order/addActivityChild',
+    //重消
+    addConsume:'/api/order/addConsume',
+    //我的订单
+    orderList:'/api/order/list',
+    //市场积分转账
+    transferMarketScore:'/api/integral/transferMarketScore',
+    //重消积分转账
+    transferConsumeScore:'/api/integral/transferConsumeScore',
+    //上传头像
+    imageUpload:'/api/user/imageUpload',
+    //修改性别
+    updateSex:'/api/user/updateSex'
 	}
 }
